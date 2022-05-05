@@ -1,0 +1,303 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Sfondo background */
+.background{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+.top-background{
+  height: 20vh;
+  background-color: #009688;
+}
+
+.main-background{
+  height: 80vh;
+  background-color: #DCDBD2;
+}
+
+/* Container WhatsApp */
+#app{
+  position: relative;
+}
+
+.container-WhatsApp{
+  width: 80%;
+  height: 90vh;
+  background-color: black;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* Chat Container */
+.chat-container{
+  width: 35%;
+  background-color: white;
+}
+
+/* User Profile */
+.user-profile{
+  height: 70px;
+  background-color: #EAEAEA;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-profile-picture{
+  display: flex;
+  align-items: center;
+}
+
+.user-profile img{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.user-profile span{
+  margin-left: 5px;
+}
+
+.user-profile i{
+  font-size: 1.3rem;
+  margin-right: 20px;
+  color: #B1B1B1;
+}
+
+/* Desktop Notifications */
+.desktop-notifications{
+  height: 80px;
+  background-color: #8EDAFC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktop-notifications-picture{
+  display: flex;
+  align-items: center;
+}
+
+.desktop-notifications i{
+  font-size: 1.2rem;
+  padding: 14px 12px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: white;
+  color: #8EDAFC;
+}
+
+.desktop-notifications-active{
+  margin-left: 10px;
+}
+
+.desktop-notifications-active-link{
+  font-size: .85rem;
+  color: gray;
+  text-decoration: underline;
+}
+
+/* Contact Search */
+.contact-search{
+  height: 50px;
+  background-color: #FAFAFA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container{
+  height: 34px;
+  width: calc(100% - 20px);
+  background-color: white;
+  border: 1px solid rgba(218, 213, 213, 0.421);
+  border-radius: 4px;
+  display: flex;
+  color: gray;
+}
+
+.search-container-icon{
+  width: 70px;
+  height: 100%;
+  border-right: 1px solid rgba(218, 213, 213, 0.421);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-container-text{
+  width: calc(100% - 70px);
+  height: 100%;
+}
+
+.search-container-text input{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  font-size: .9rem;
+}
+
+/* Contact Container */
+.contact-container{
+  height: calc(100% - 200px);
+  background-color: #FFFFFF;
+  overflow-y: scroll;
+}
+
+.contact-user{
+  height: 80px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.contact-user img{
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.contact-user-name{
+  margin-left: 10px;
+}
+
+.contact-user-last-message{
+  font-size: .85rem;
+  color: gray;
+}
+
+.contact-user-time{
+  font-size: .85rem;
+  color: gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+/* Message Container */
+.message-container{
+  width: 65%;
+  background-color: aliceblue;
+}
+
+/* Contact Select User */
+.contact-select-user{
+  height: 70px;
+  background-color: #EAEAEA;
+  border-left: 1px solid #D5D5D5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-profile-picture{
+  display: flex;
+  align-items: center;
+}
+
+.contact-select-user img{
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.contact-select-name{
+  margin-left: 10px;
+}
+
+.contact-select-last-access{
+  font-size: .85rem;
+  color: gray;
+}
+
+.contact-select-user i{
+  font-size: 1.3rem;
+  margin-right: 20px;
+  color: #B1B1B1;
+}
+
+/* Contact Select Message Container */
+.contact-select-message-container{
+  height: calc(100% - 70px);
+  background-color: #F3EEEA;
+  border-left: 1px solid #D5D5D5;
+}
+
+/* Contact Select Message Box */
+.contact-select-message-box{
+  height: calc(100% - 70px);
+  background-image: url("../img/mine.jpg");
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-select-message-box .green{
+  display: flex;
+  align-items: flex-end;
+}
+
+.own-text,
+.user-text{
+  padding: 20px;
+  width: calc(100% - 60%);
+  border-radius: 14px;
+  margin: 10px 40px;
+}
+
+.own-text{
+  margin-left: 55%;
+}
+
+.green{
+  background-color: #D5F9BA;
+}
+
+.white{
+  background-color: white;
+}
+
+/* Contact Select Message Writer */
+.contact-select-message-writer{
+  height: 70px;
+  background-color: #F3EEEA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-writer-icon{
+  width: 70px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6B7376;
+  font-size: 1.5rem;
+}
+
+.message-writer-text{
+  width: calc(100% - 140px);
+  height: 70%;
+}
+
+.message-writer-text input{
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
+  font-size: .9rem;
+}

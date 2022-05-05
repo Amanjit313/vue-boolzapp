@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Boolzapp</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sfondo Background -->
+  <div class="background">
+    <div class="top-background"></div>
+    <div class="main-background"></div>
+  </div>
+  <!-- /Sfondo Background -->
+  
+  <div id="app">
+
+    <!-- Container Whatsapp -->
+    <div class="container-WhatsApp">
+  
+      <!-- Chat Container -->
+      <div class="chat-container">
+        
+        <!-- User Profile -->
+        <div class="user-profile">
+
+          <div class="user-profile-picture">
+            <img src="img/avatar_io.jpg" alt="avatar_io"> 
+            <span>Sofia</span> 
+          </div>
+
+          <div class="user-profile-options">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+        </div>
+        <!-- /User Profile -->
+        
+        <!-- Desktop Notifications -->
+        <div class="desktop-notifications">
+
+          <div class="desktop-notifications-picture">
+            <i class="fa-solid fa-bell-slash"></i>
+            <span class="desktop-notifications-active">
+              Ricevi notifiche di nuovi messaggi<br>
+              <span class="desktop-notifications-active-link">Attiva notifiche desktop</span>
+            </span> 
+          </div>
+
+        </div>
+        <!-- /Desktop Notifications -->
+        
+        <!-- Contact Search -->
+        <div class="contact-search">
+          <div class="search-container">
+            <div class="search-container-icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="search-container-text">
+              <input type="text" placeholder="  Cerca o inizia una nuova chat">
+            </div>
+          </div>
+        </div>
+        <!-- /Contact Search -->
+        
+        <!-- Contact Container -->
+        <div class="contact-container">
+
+          <div v-for="(user, index) in users" class="contact-user">
+
+            <img src="`img/avatar${user[indexDin].avatar}.jpg`"> 
+            <span class="contact-user-name">
+              {{user.name}}<br>
+              <span class="contact-user-last-message">Ultimo messaggio inviato</span>
+            </span> 
+            <span class="contact-user-time">12:00</span>
+
+          </div>
+
+        </div>
+        <!-- /Contact Container -->
+        
+      </div>
+      <!-- /Chat Container -->
+      
+      <!-- Message Container -->
+      <div class="message-container">
+
+        <!-- Contact Select User-->
+        <div class="contact-select-user">
+
+          <div class="contact-profile-picture">
+            <img src="img/avatar_1.jpg" alt="avatar_1"> 
+            <span class="contact-select-name">
+              Michele<br>
+              <span class="contact-select-last-access">Ultimo accesso oggi alle 12:00</span>
+            </span> 
+          </div>
+
+          <div class="contact-profile-options">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+
+        </div>
+        <!-- /Contact Select User-->
+        
+        <!-- Contact Select Message Container-->
+        <div class="contact-select-message-container">
+          
+          
+          <!-- Contact Select Message Box-->
+          <div class="contact-select-message-box">
+          
+            <div class="green own-text">Hai portato a spasso il cane?</div>
+
+            <div class="green own-text">Ricordati di stendere i panni</div>
+
+            <div class="white user-text">Tutto fatto!</div>
+
+          </div>
+          <!-- /Contact Select Message Box-->
+          
+          <!-- Contact Select Message Writer-->
+          <div class="contact-select-message-writer">
+              <div class="message-writer-icon">
+                <i class="fa-regular fa-face-smile"></i>
+              </div>
+              <div class="message-writer-text">
+                <input type="text" placeholder="  Scrivi un messaggio">
+              </div>
+              <div class="message-writer-icon">
+                <i class="fa-solid fa-microphone"></i>
+              </div>
+          </div>
+          <!-- /Contact Select Message Writer-->
+
+        </div>
+        <!-- /Contact Select Message Container-->
+
+      </div>
+      <!-- Message Container -->
+  
+    </div>
+    <!-- /Container WhatsApp -->
+
+  </div>
+
+  <script src="js/contacts-boolzapp.js"></script>
+</body>
+</html>
