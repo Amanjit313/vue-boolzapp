@@ -76,7 +76,7 @@
 
           <div v-for="(user, index) in users" class="contact-user">
 
-            <img src="`img/avatar${user[indexDin].avatar}.jpg`"> 
+            <img :src="`img/avatar${user.avatar}.jpg`" :alt = "user.avatar"> 
             <span class="contact-user-name">
               {{user.name}}<br>
               <span class="contact-user-last-message">Ultimo messaggio inviato</span>

@@ -167,8 +167,6 @@ const app = new Vue({
             }
         ],
 
-        indexDin: 0
-
     }
 
 })
