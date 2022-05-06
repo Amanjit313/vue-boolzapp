@@ -31,8 +31,8 @@
         <div class="user-profile">
 
           <div class="user-profile-picture">
-            <img src="img/avatar_io.jpg" alt="avatar_io"> 
-            <span>Sofia</span> 
+            <img :src="`img/avatar${myProfile.myAvatar}.jpg`" :alt="myProfile.myAvatar"> 
+            <span>{{myProfile.myName}}</span> 
           </div>
 
           <div class="user-profile-options">
@@ -121,11 +121,20 @@
           <!-- Contact Select Message Box-->
           <div class="contact-select-message-box">
           
-            <div class="green own-text">Hai portato a spasso il cane?</div>
+            <div class="green own-text">
+              <div class="message-text">Hai portato a spasso il cane?</div> 
+              <div class="message-time">12:00</div>
+            </div>
+            
+            <div class="green own-text">
+              <div class="message-text">Ricordati di stendere i panni</div> 
+              <div class="message-time">12:00</div>
+            </div>
 
-            <div class="green own-text">Ricordati di stendere i panni</div>
-
-            <div class="white user-text">Tutto fatto!</div>
+            <div class="white user-text">
+              <div class="message-text">Tutto fatto!</div> 
+              <div class="message-time">12:00</div>
+            </div>
 
           </div>
           <!-- /Contact Select Message Box-->

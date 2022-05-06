@@ -25,10 +25,12 @@
 /* Container WhatsApp */
 #app{
   position: relative;
+  top: 5vh;
 }
 
 .container-WhatsApp{
-  width: 80%;
+  max-width: 80%;
+  min-width: 800px;
   height: 90vh;
   background-color: black;
   margin: 0 auto;
@@ -256,6 +258,8 @@
   width: calc(100% - 60%);
   border-radius: 14px;
   margin: 10px 40px;
+  position: relative;
+  top: 50px;
 }
 
 .own-text{
@@ -266,8 +270,24 @@
   background-color: #D5F9BA;
 }
 
+.green span{
+  background-color: #D5F9BA;
+}
+
 .white{
   background-color: white;
+}
+
+.message-text{
+  width: 100%;
+}
+
+.message-time{
+  color: gray;
+  font-size: .75rem;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }
 
 /* Contact Select Message Writer */
