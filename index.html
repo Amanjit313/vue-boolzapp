@@ -74,7 +74,7 @@
         <!-- Contact Container -->
         <div class="contact-container">
 
-          <div v-for="(user, index) in users" class="contact-user">
+          <div v-for="(user, index) in users" @click = "activeUser = index" class="contact-user" :class="activeUser === index ? 'active' : '' ">
 
             <img :src="`img/avatar${user.avatar}.jpg`" :alt = "user.avatar"> 
             <span class="contact-user-name">
@@ -98,9 +98,9 @@
         <div class="contact-select-user">
 
           <div class="contact-profile-picture">
-            <img src="img/avatar_1.jpg" alt="avatar_1"> 
+            <img :src="`img/avatar${users[activeUser].avatar}.jpg`" alt="avatar_1"> 
             <span class="contact-select-name">
-              Michele<br>
+              {{users[activeUser].name}}<br>
               <span class="contact-select-last-access">Ultimo accesso oggi alle 12:00</span>
             </span> 
           </div>
@@ -121,19 +121,9 @@
           <!-- Contact Select Message Box-->
           <div class="contact-select-message-box">
           
-            <div class="green own-text">
-              <div class="message-text">Hai portato a spasso il cane?</div> 
-              <div class="message-time">12:00</div>
-            </div>
-            
-            <div class="green own-text">
-              <div class="message-text">Ricordati di stendere i panni</div> 
-              <div class="message-time">12:00</div>
-            </div>
-
-            <div class="white user-text">
-              <div class="message-text">Tutto fatto!</div> 
-              <div class="message-time">12:00</div>
+            <div v-for="(message, index) in users[activeUser].messages" :class="message.status === 'sent' ? 'own-text' : 'user-text' ">
+              <div class="message-text">{{message.message}}</div> 
+              <div class="message-time">{{message.date}}</div>
             </div>
 
           </div>

@@ -163,6 +163,14 @@
   border-bottom: 1px solid #D5D5D5;
 }
 
+.contact-user:hover{
+  background-color: lightgrey;
+}
+
+.contact-user.active{
+  background-color: lightgrey;
+}
+
 .contact-user img{
   width: 60px;
   height: 60px;
@@ -264,17 +272,10 @@
 
 .own-text{
   margin-left: 55%;
-}
-
-.green{
   background-color: #D5F9BA;
 }
 
-.green span{
-  background-color: #D5F9BA;
-}
-
-.white{
+.user-text{
   background-color: white;
 }
 
