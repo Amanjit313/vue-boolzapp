@@ -242,11 +242,19 @@ const app = new Vue({
             console.log(this.newMessage.message);
             console.log(this.automaticMessage.message);
             
-            /* Creo la mia condizione che da una lettera inviata in poi mi stampa il messaggio costum in chat e dopo 1s quello automatico*/
-            if(this.newMessage.message.length > 0){
-                this.users[index].messages.push({...this.newMessage});
+            /* Creo la mia condizione che da una lettera inviata in poi mi stampa il messaggio costum in chat e dopo 1s quello automatico */
 
+            /* Con questa sintassi: nuovoOggetto = {...oggetto} creo un nuovo oggetto clonandone un altro, quindi nuovoOggetto sarà il clone di oggetto*/
+
+            if(this.newMessage.message.length > 0){
+
+                /* Un metodo alternativo per clonarlo */
+                const messageToSend = {...this.newMessage};
+                
+                this.users[index].messages.push(messageToSend);
+                
                 setTimeout(() => {
+                    /* Metodo base di clonaggio */
                     this.users[index].messages.push({...this.automaticMessage});
                 }, 1000);
 
