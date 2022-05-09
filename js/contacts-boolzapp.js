@@ -206,17 +206,20 @@ const app = new Vue({
 
         /* Creo un nuovo elemento con tutti i dati necessari per pusharlo dentro al mio array dei messaggi a seconda di quale chat ci troviamo */
         newMessage: {
-            date: '2022',
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
             message: "",
             status: 'sent'
         },
 
         /* Creo il mio elemento per generare il messaggio automatico dopo il mio invio del messaggio costum*/
         automaticMessage: {
-            date: '2022',
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
             message: "OK!",
             status: 'received'
-        }
+        },
+
+        /* Creo un elemento per il mio filter che mi serve per cercare i miei contatti per nome tramite la search */
+        contactSearch: ""
 
     },
     
@@ -250,17 +253,33 @@ const app = new Vue({
 
                 /* Un metodo alternativo per clonarlo */
                 const messageToSend = {...this.newMessage};
-                
+
+                /* Sovrasscrivo il mio date, così nel momento dell'invio mi da il date corrente, senza questa sovrasscrizione mi avrebbe dato il date default messo nel mio elemento dentro il data, che mi avrebbe dato il date del momento in cui la mia pagina si era caricata */
+                messageToSend.date = dayjs().format("DD/MM/YYYY HH:mm:ss");
+
                 this.users[index].messages.push(messageToSend);
                 
                 setTimeout(() => {
+
+                    /* Un alternativa su come sovrasscrivere il date */
+                    this.automaticMessage.date = dayjs().format("DD/MM/YYYY HH:mm:ss");
+                    
                     /* Metodo base di clonaggio */
                     this.users[index].messages.push({...this.automaticMessage});
                 }, 1000);
 
             }
             this.newMessage.message = "";
-        }
+        },
+
+/*         contactSearchFunction() {
+
+            this.users.forEach(userFilter =>{
+                userFilter.visible = userFilter.name.includes(this.contactSearch);
+            })
+            
+          }
+ */
     }
 
 })
