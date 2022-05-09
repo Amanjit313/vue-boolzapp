@@ -201,20 +201,55 @@ const app = new Vue({
             }
         ],
 
-        activeUser: 0
-        
+        /* Creo un contatore per confrontarlo con l'index */
+        activeUser: 0,
+
+        /* Creo un nuovo elemento con tutti i dati necessari per pusharlo dentro al mio array dei messaggi a seconda di quale chat ci troviamo */
+        newMessage: {
+            date: '2022',
+            message: "",
+            status: 'sent'
+        },
+
     },
     
     methods: {
-    
+        
+        /* Funzione per farmi stampare lista contatti l'ultimo messaggio */
         lastMessage(user){
             return user.messages[user.messages.length - 1].message;
         },
-
+        
+        /* Funzione per farmi stampare nella lista contatti la data dell'ultimo messaggio */
         lastDate(user){
             return user.messages[user.messages.length - 1].date;
-        }
+        },
     
+        /* Funzione per pushare il mio elemento NewMessage nel mio array messagges dentro l'user a seconda di dove si trova, mi aiuto con l'index */
+        addNewMessage(){
+            /* Creo la constante index per dire in quale chat mi trovo */
+            const index = this.activeUser;
+            console.log(index);
+            console.log(this.newMessage.message);
+
+            /* Creo il mio if che da una lettera inviata in poi mi stampa il messaggio costum in chat*/
+            if(this.newMessage.message.length > 0){
+                this.users[index].messages.push({...this.newMessage});
+            }
+            this.newMessage.message = "";
+            
+            /* Creo la mia costante per generare il messaggio automatico dopo il mio invio del messaggio costum, e poi lo pusho*/
+            const automaticMessage= {
+                date: '2022',
+                message: "OK!",
+                status: 'received'
+            }
+            console.log(automaticMessage.message);
+            
+            setTimeout(() => {
+                this.users[index].messages.push(automaticMessage);
+            }, 1000);
+        }
     }
 
 })
