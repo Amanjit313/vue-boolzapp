@@ -211,6 +211,13 @@ const app = new Vue({
             status: 'sent'
         },
 
+        /* Creo il mio elemento per generare il messaggio automatico dopo il mio invio del messaggio costum*/
+        automaticMessage: {
+            date: '2022',
+            message: "OK!",
+            status: 'received'
+        }
+
     },
     
     methods: {
@@ -225,30 +232,26 @@ const app = new Vue({
             return user.messages[user.messages.length - 1].date;
         },
     
-        /* Funzione per pushare il mio elemento NewMessage nel mio array messagges dentro l'user a seconda di dove si trova, mi aiuto con l'index */
+        /* Funzione per pushare il mio elemento NewMessage nel mio array messagges dentro l'user, a seconda della chat in cui si trova*/
         addNewMessage(){
+
             /* Creo la constante index per dire in quale chat mi trovo */
             const index = this.activeUser;
+
             console.log(index);
             console.log(this.newMessage.message);
-
-            /* Creo il mio if che da una lettera inviata in poi mi stampa il messaggio costum in chat*/
+            console.log(this.automaticMessage.message);
+            
+            /* Creo la mia condizione che da una lettera inviata in poi mi stampa il messaggio costum in chat e dopo 1s quello automatico*/
             if(this.newMessage.message.length > 0){
                 this.users[index].messages.push({...this.newMessage});
+
+                setTimeout(() => {
+                    this.users[index].messages.push({...this.automaticMessage});
+                }, 1000);
+
             }
             this.newMessage.message = "";
-            
-            /* Creo la mia costante per generare il messaggio automatico dopo il mio invio del messaggio costum, e poi lo pusho*/
-            const automaticMessage= {
-                date: '2022',
-                message: "OK!",
-                status: 'received'
-            }
-            console.log(automaticMessage.message);
-            
-            setTimeout(() => {
-                this.users[index].messages.push(automaticMessage);
-            }, 1000);
         }
     }
 
