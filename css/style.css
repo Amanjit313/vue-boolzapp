@@ -145,6 +145,7 @@
   height: 100%;
   border: 0;
   font-size: .9rem;
+  padding: 5px;
 }
 
 /* Contact Container */
@@ -321,4 +322,5 @@
   border: 0;
   border-radius: 4px;
   font-size: .9rem;
+  padding: 5px;
 }
