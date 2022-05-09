@@ -79,9 +79,9 @@
             <img :src="`img/avatar${user.avatar}.jpg`" :alt = "user.avatar"> 
             <span class="contact-user-name">
               {{user.name}}<br>
-              <span class="contact-user-last-message">Ultimo messaggio inviato</span>
+              <span class="contact-user-last-message">{{lastMessage(user)}}</span>
             </span> 
-            <span class="contact-user-time">12:00</span>
+            <span class="contact-user-time">{{lastDate(user)}}</span>
 
           </div>
 

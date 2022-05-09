@@ -202,7 +202,19 @@ const app = new Vue({
         ],
 
         activeUser: 0
+        
+    },
+    
+    methods: {
+    
+        lastMessage(user){
+            return user.messages[user.messages.length - 1].message;
+        },
 
+        lastDate(user){
+            return user.messages[user.messages.length - 1].date;
+        }
+    
     }
 
 })
