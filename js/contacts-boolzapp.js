@@ -272,14 +272,15 @@ const app = new Vue({
             this.newMessage.message = "";
         },
 
-/*         contactSearchFunction() {
+        /* Funzione per filtrare nella mia chat dei contatti, cercando per nome un contatto */
+        contactSearchFunction() {
 
             this.users.forEach(userFilter =>{
-                userFilter.visible = userFilter.name.includes(this.contactSearch);
+                userFilter.visible = userFilter.name.toUpperCase().includes(this.contactSearch.toUpperCase());
             })
             
           }
- */
+
     }
 
 })
