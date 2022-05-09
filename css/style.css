@@ -126,26 +126,30 @@
   color: gray;
 }
 
-.search-container-icon{
-  width: 70px;
+.search-container-text{
+  width: 100%;
   height: 100%;
-  border-right: 1px solid rgba(218, 213, 213, 0.421);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.search-container-text{
-  width: calc(100% - 70px);
-  height: 100%;
-}
-
-.search-container-text input{
+.search-container-text input {
   width: 100%;
   height: 100%;
   border: 0;
   font-size: .9rem;
-  padding: 5px;
+  padding-left: 45px;
+}
+
+.search-container-text span {
+  position: absolute;
+  width: 2.5rem;
+  height: 2rem;
+  pointer-events: none;
+  border-right: 1px solid rgba(218, 213, 213, 0.421);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Contact Container */
